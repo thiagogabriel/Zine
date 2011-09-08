@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
 
     if @article.save
-      redirect_to @article, notice: 'Article was successfully created.' }
+      redirect_to @article, notice: 'Article was successfully created.'
     else
       render action: "new"
     end

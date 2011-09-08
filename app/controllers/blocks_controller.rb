@@ -23,7 +23,7 @@ class BlocksController < ApplicationController
     @block.article = @article
     @block.type = "Text"
     if @block.save
-      redirect_to @block, notice: 'Block was successfully created.' }
+      redirect_to @block, notice: 'Block was successfully created.' 
       render action: "new"
     end
   end
