@@ -1,5 +1,6 @@
 class BlocksController < ApplicationController
   before_filter :get_article
+  before_filter :set_params, :only => [:create, :update]
   
   def index
     @blocks = Block.all
@@ -34,7 +35,8 @@ class BlocksController < ApplicationController
 
   def create
     @block = Block.new(params[:block])
-
+    @block.article = @article
+    @block.block_type = "Text"
     respond_to do |format|
       if @block.save
         format.html { redirect_to @block, notice: 'Block was successfully created.' }
@@ -74,5 +76,9 @@ class BlocksController < ApplicationController
   
   def get_article
     @article = Article.find(params[:article_id])
+  end
+  
+  def set_params
+    params[:block][:article_id] = params[:article_id]
   end
 end

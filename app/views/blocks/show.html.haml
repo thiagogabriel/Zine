@@ -11,8 +11,8 @@
   = @block.data
 %p
   %b Type:
-  = @block.type
+  = @block.block_type
 
-= link_to 'Edit', edit_block_path(@block)
+= link_to 'Edit', edit_articl_block_path([@article, @block])
 \|
 = link_to 'Back', blocks_path

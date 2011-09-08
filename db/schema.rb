@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110908014322) do
+ActiveRecord::Schema.define(:version => 20110908031210) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20110908014322) do
     t.integer  "article_id"
     t.integer  "order"
     t.text     "data"
-    t.string   "type"
+    t.string   "block_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

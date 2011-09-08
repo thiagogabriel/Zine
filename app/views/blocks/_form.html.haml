@@ -1,22 +1,15 @@
-= form_for @block do |f|
+= form_for [@article, @block] do |f|
   -if @block.errors.any?
     #error_explanation
       %h2= "#{pluralize(@block.errors.count, "error")} prohibited this block from being saved:"
       %ul
         - @block.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :article_id
-    = f.number_field :article_id
   .field
     = f.label :order
     = f.number_field :order
   .field
-    = f.label :data
+    = f.label :data, 'Content'
     = f.text_area :data
-  .field
-    = f.label :type
-    = f.text_field :type
   .actions
     = f.submit 'Save'
