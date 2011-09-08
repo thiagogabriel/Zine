@@ -1,0 +1,25 @@
+%h1 Listing blocks
+
+%table
+  %tr
+    %th Article
+    %th Order
+    %th Data
+    %th Type
+    %th
+    %th
+    %th
+
+  - @blocks.each do |block|
+    %tr
+      %td= block.article_id
+      %td= block.order
+      %td= block.data
+      %td= block.type
+      %td= link_to 'Show', block
+      %td= link_to 'Edit', edit_block_path(block)
+      %td= link_to 'Destroy', block, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Block', new_block_path

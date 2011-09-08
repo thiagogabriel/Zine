@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  article_id: 1
+  order: 1
+  data: MyText
+  type: 
+
+two:
+  article_id: 1
+  order: 1
+  data: MyText
+  type: 

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Article:
+  = @block.article_id
+%p
+  %b Order:
+  = @block.order
+%p
+  %b Data:
+  = @block.data
+%p
+  %b Type:
+  = @block.type
+
+= link_to 'Edit', edit_block_path(@block)
+\|
+= link_to 'Back', blocks_path
