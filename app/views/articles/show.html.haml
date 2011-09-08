@@ -10,6 +10,31 @@
   %b Image:
   = @article.image
 
+%table
+  %tr
+    %th Article
+    %th Order
+    %th Data
+    %th Type
+    %th
+    %th
+    %th
+
+  - @article.blocks.each do |block|
+    %tr
+      %td= block.article_id
+      %td= block.order
+      %td= block.data
+      %td= block.block_type
+      %td= link_to 'Show', [@article, block]
+      %td= link_to 'Edit', edit_article_block_path(@article, block)
+      %td= link_to 'Destroy', [@article, block], :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Block', new_article_block_path(@article)
+%br
+
 = link_to 'Edit', edit_article_path(@article)
 \|
 = link_to 'Blocks', article_blocks_path(@article)

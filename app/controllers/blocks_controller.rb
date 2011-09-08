@@ -21,9 +21,10 @@ class BlocksController < ApplicationController
   def create
     @block = Block.new(params[:block])
     @block.article = @article
-    @block.type = "Text"
+    @block.block_type = "Text"
     if @block.save
-      redirect_to @block, notice: 'Block was successfully created.' 
+      redirect_to @block.article, notice: 'Block was successfully created.' 
+	else
       render action: "new"
     end
   end
@@ -42,7 +43,7 @@ class BlocksController < ApplicationController
     @block = Block.find(params[:id])
     @block.destroy
     
-    redirect_to blocks_url
+    redirect_to article_blocks_url(@article)
   end
   
   private #-------------------------------------------
