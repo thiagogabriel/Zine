@@ -1,6 +1,4 @@
 class ArticlesController < ApplicationController
-  # GET /articles
-  # GET /articles.json
   def index
     @articles = Article.all
 
@@ -10,8 +8,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # GET /articles/1
-  # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
 
@@ -21,8 +17,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # GET /articles/new
-  # GET /articles/new.json
   def new
     @article = Article.new
 
@@ -32,13 +26,10 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
   end
 
-  # POST /articles
-  # POST /articles.json
   def create
     @article = Article.new(params[:article])
 
@@ -53,8 +44,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # PUT /articles/1
-  # PUT /articles/1.json
   def update
     @article = Article.find(params[:id])
 
@@ -69,8 +58,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1
-  # DELETE /articles/1.json
   def destroy
     @article = Article.find(params[:id])
     @article.destroy

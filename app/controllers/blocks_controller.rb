@@ -1,8 +1,6 @@
 class BlocksController < ApplicationController
   before_filter :get_article
   
-  # GET /blocks
-  # GET /blocks.json
   def index
     @blocks = Block.all
 
@@ -12,8 +10,6 @@ class BlocksController < ApplicationController
     end
   end
 
-  # GET /blocks/1
-  # GET /blocks/1.json
   def show
     @block = Block.find(params[:id])
 
@@ -23,8 +19,6 @@ class BlocksController < ApplicationController
     end
   end
 
-  # GET /blocks/new
-  # GET /blocks/new.json
   def new
     @block = Block.new
 
@@ -34,13 +28,10 @@ class BlocksController < ApplicationController
     end
   end
 
-  # GET /blocks/1/edit
   def edit
     @block = Block.find(params[:id])
   end
 
-  # POST /blocks
-  # POST /blocks.json
   def create
     @block = Block.new(params[:block])
 
@@ -55,8 +46,6 @@ class BlocksController < ApplicationController
     end
   end
 
-  # PUT /blocks/1
-  # PUT /blocks/1.json
   def update
     @block = Block.find(params[:id])
 
@@ -71,8 +60,6 @@ class BlocksController < ApplicationController
     end
   end
 
-  # DELETE /blocks/1
-  # DELETE /blocks/1.json
   def destroy
     @block = Block.find(params[:id])
     @block.destroy
