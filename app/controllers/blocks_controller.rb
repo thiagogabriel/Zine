@@ -1,4 +1,6 @@
 class BlocksController < ApplicationController
+  before_filter :get_article
+  
   # GET /blocks
   # GET /blocks.json
   def index
@@ -79,5 +81,11 @@ class BlocksController < ApplicationController
       format.html { redirect_to blocks_url }
       format.json { head :ok }
     end
+  end
+  
+  private
+  
+  def get_article
+    @article = Article.find(params[:article_id])
   end
 end
