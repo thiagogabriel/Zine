@@ -1,5 +1,7 @@
 Zine::Application.routes.draw do
 
+  root :to => "home#index"
+  
   resources :articles do
     resources :blocks
   end
