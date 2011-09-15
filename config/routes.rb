@@ -1,11 +1,11 @@
 Zine::Application.routes.draw do
-
   root :to => "home#index"
-  
   resources :articles do
-    resources :blocks
+    resources :blocks do
+	  resources :images
+	end
   end
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

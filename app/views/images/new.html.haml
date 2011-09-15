@@ -1,0 +1,5 @@
+= form_for @image, :url => article_block_images_path(@block.article.id, @block.id), :html => {:multipart => true} do |f|
+	=f.file_field :image
+	=f.text_area:description
+	.actions
+		= f.submit 'Save'
