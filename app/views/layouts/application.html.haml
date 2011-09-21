@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title Zine
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #menu
+      = link_to "Home", root_path
+      = link_to "Articles", articles_path
+    #content
+      = yield
