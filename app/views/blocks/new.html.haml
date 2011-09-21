@@ -1,5 +1,8 @@
 %h1 New block
+=debug params
+-if @type == "image"
+  = render 'image_form'
+-else
+  = render 'form'
 
-= render 'form'
-
-= link_to 'Back', article_blocks_path(@article)
+= link_to 'Back', article_path(@article)

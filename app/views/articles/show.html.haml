@@ -1,42 +1,46 @@
-%p#notice= notice
+#article
+  %p#notice= notice
 
-%p
-  %b Title:
-  = @article.title
-%p
-  %b Summary:
-  = @article.summary
-%p
-  %b Image:
-  = @article.image
+  #new_block
+    %h2 New Block
+    %ul
+      %li= link_to 'Text', new_article_block_path(@article)
+      %li= link_to 'Image', new_article_block_path(@article, :type => :image)
 
-%table
-  %tr
-    %th Article
-    %th Order
-    %th Data
-    %th Type
-    %th
-    %th
-    %th
 
-  - @article.blocks.each do |block|
+  %p
+    %b Title:
+    = @article.title
+  %p
+    %b Summary:
+    = @article.summary
+  %p
+    %b Image:
+    = @article.image
+
+  %table
     %tr
-      %td= block.article_id
-      %td= block.order
-      %td= block.data
-      %td= block.block_type
-      %td= link_to 'Show', [@article, block]
-      %td= link_to 'Edit', edit_article_block_path(@article, block)
-      %td= link_to 'Destroy', [@article, block], :confirm => 'Are you sure?', :method => :delete
+      %th Article
+      %th Order
+      %th Data
+      %th Type
+      %th
+      %th
+      %th
 
-%br
+    - @article.blocks.each do |block|
+      %tr
+        %td= block.article_id
+        %td= block.order
+        %td= block.data
+        %td= block.block_type
+        %td= link_to 'Show', [@article, block]
+        %td= link_to 'Edit', edit_article_block_path(@article, block)
+        %td= link_to 'Destroy', [@article, block], :confirm => 'Are you sure?', :method => :delete
 
-= link_to 'New Block', new_article_block_path(@article)
-%br
+  %br
 
-= link_to 'Edit', edit_article_path(@article)
-\|
-= link_to 'Blocks', article_blocks_path(@article)
-\|
-= link_to 'Back', articles_path
+
+  = link_to 'Edit', edit_article_path(@article)
+  \|
+  = link_to 'Back', articles_path
