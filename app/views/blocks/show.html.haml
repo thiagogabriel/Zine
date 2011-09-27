@@ -13,6 +13,13 @@
   %b Type:
   = @block.block_type
 
+-if @block.block_type == "image"
+  #images
+    -for image in @block.images
+      =image_tag image.image, size: "60x60"
+  %p
+    =link_to "Add image", new_article_block_image_path(@article, @block)
+
 = link_to 'Edit', edit_article_path(@article, @block)
 \|
 = link_to 'Back', article_path(@article)

@@ -357,8 +357,10 @@ div {
 #menu {
   width:100%;
   background:#e1e1e1;
-  padding:6px;
   border-bottom:1px solid #000;
+  a {
+    margin:10px;
+  }
 }
 #content {
   background:#fff;
