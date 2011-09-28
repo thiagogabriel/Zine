@@ -1,0 +1,3 @@
+%h1= @article.title
+-for block in @blocks
+  =render :partial => block.block_type.downcase, :locals => { :block => block }

@@ -16,7 +16,9 @@
 -if @block.block_type == "image"
   #images
     -for image in @block.images
-      =image_tag image.image, size: "60x60"
+      .image
+        =link_to image_tag(image.image, size: "60x60"), edit_article_block_image_path(@block.article_id, @block, image)
+        =link_to "x", article_block_image_path(@block.article_id, @block, image.id), method: :delete
   %p
     =link_to "Add image", new_article_block_image_path(@article, @block)
 

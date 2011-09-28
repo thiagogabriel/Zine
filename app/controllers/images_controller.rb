@@ -30,7 +30,7 @@ class ImagesController < ApplicationController
   def update
 	@image = Image.find(params[:id])
 	if @image.update_attributes(params[:image])
-	  redirect_to [@block.article, @block, @image], :notice => "Image was successfully saved."
+	  redirect_to [@block.article, @block], :notice => "Image was successfully saved."
 	else
 	  render action: "edit"
 	end
@@ -39,7 +39,7 @@ class ImagesController < ApplicationController
   def destroy
     @image = Image.find(params[:id])
 	@image.destroy
-	redirect_to article_block_images_path(params[:article_id], params[:block_id])
+	redirect_to article_block_path(params[:article_id], params[:block_id])
   end
   private
   

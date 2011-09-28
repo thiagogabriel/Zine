@@ -35,7 +35,7 @@ class BlocksController < ApplicationController
     @block = Block.find(params[:id])
 
     if @block.update_attributes(params[:block])
-      redirect_to @block, notice: 'Block was successfully updated.'
+      redirect_to [@block.article, @block], notice: 'Block was successfully updated.'
     else
       render action: "edit"
     end

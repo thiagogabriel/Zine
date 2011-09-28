@@ -1,2 +1,8 @@
-%h1 Images#edit
-%p Find me in app/views/images/edit.html.haml
+%h1 Editing image
+= form_for @image, :url => article_block_image_path(@block.article.id, @block.id, @image) do |f|
+  %p
+    =image_tag @image.image
+  %p
+    =f.text_area :description
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,4 @@
+%h1 Read
+%ul
+  -for article in @articles
+    %li= link_to article.title, read_article_path(article.id)
