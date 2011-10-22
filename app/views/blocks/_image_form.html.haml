@@ -5,15 +5,14 @@
       %ul
         - @block.errors.full_messages.each do |msg|
           %li= msg
-  .field
-    = f.label :order
-    = f.number_field :order
-  .field
+  .field.clearfix
     = label_tag "block[data][name]", "Name"
-    = text_field_tag "block[data][name]"
-  .field
+    .input
+      = text_field_tag "block[data][name]"
+  .field.clearfix
     = label_tag "block[data][type]", "Type"
-    = select_tag "block[data][type]", options_for_select([['Simple', 0]])
+    .input
+      = select_tag "block[data][type]", options_for_select([['Simple', 0]])
     //  .field
     //    = f.label :type, 'Type'
     //    = f.select(:type, options_for_select(['Simple', 0]))
@@ -22,6 +21,6 @@
 
   .actions
     = hidden_field_tag "block[block_type]", "image"
-    = f.submit 'Save'
-
+    = f.submit 'Save', :class => "btn primary"
+    = link_to "Cancel", @article, :class => :btn
 

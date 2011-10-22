@@ -5,11 +5,10 @@
       %ul
         - @block.errors.full_messages.each do |msg|
           %li= msg
-  .field
-    = f.label :order
-    = f.number_field :order
-  .field
+  .field.clearfix
     = f.label :data, 'Content'
-    = f.text_area :data
+    .input
+      = f.text_area :data, :class => :span12, :rows => 15
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', :class => "btn primary"
+    = link_to 'Back', article_path(@article), :class => :btn

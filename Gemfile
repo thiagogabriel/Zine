@@ -35,3 +35,5 @@ end
 gem 'haml-rails'
 
 gem "paperclip", "~> 2.4"
+
+gem 'bootstrap-sass', '1.3.0'
