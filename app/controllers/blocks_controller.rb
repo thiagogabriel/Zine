@@ -24,6 +24,8 @@ class BlocksController < ApplicationController
     @block.article = @article
     @block.block_type ||= "text"
     @block.data = params[:block][:data]
+    @block.order ||= 1
+    
     if @block.save
       redirect_to @block.article, notice: 'Block was successfully created.' 
 	  else
@@ -33,7 +35,7 @@ class BlocksController < ApplicationController
 
   def update
     @block = Block.find(params[:id])
-
+    @block.order ||= 1
     if @block.update_attributes(params[:block])
       redirect_to [@block.article, @block], notice: 'Block was successfully updated.'
     else

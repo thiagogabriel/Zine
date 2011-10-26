@@ -6,9 +6,19 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    #menu
-      = link_to "Home", root_path
-      = link_to "Read", read_path
-      = link_to "Articles", articles_path
-    #content
+    .topbar
+      .fill
+        .container
+          =link_to "Magazine", root_path, :class => :brand
+          %ul.nav
+            %li= link_to "Home", root_path
+            %li= link_to "Read", read_path
+            %li= link_to "Articles", articles_path
+    #content.container
+      -if flash[:notice]
+        .alert-message.info=flash[:notice]
+      -if flash[:error]
+        .alert-message.error=flash[:error]
+      -if flash[:warning]
+        .alert-message.warning=flash[:warning]
       = yield

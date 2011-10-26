@@ -1,46 +1,31 @@
-#article
-  %p#notice= notice
+#article.row
 
-  #new_block
-    %h2 New Block
-    %ul
-      %li= link_to 'Text', new_article_block_path(@article)
-      %li= link_to 'Image', new_article_block_path(@article, :type => :image)
+  .span13
+    %h1= @article.title
+    %p
+      %b Summary:
+      = @article.summary
+  
+    -if @article.blocks.length > 0
+      %table.zebra-striped
+        %tr
+          %th Type
+          %th Data
+          %th{:width => "200px"}
 
+        - @article.blocks.each do |block|
+          %tr
+            %td= block.block_type.capitalize
+            %td= block.data
+            %td
+              = link_to 'Show', [@article, block], :class => :btn
+              = link_to 'Edit', edit_article_block_path(@article, block), :class => :btn
+              = link_to 'Destroy', [@article, block], :confirm => 'Are you sure?', :method => :delete, :class => "btn danger"
 
-  %p
-    %b Title:
-    = @article.title
-  %p
-    %b Summary:
-    = @article.summary
-  %p
-    %b Image:
-    = @article.image
-
-  %table
-    %tr
-      %th Article
-      %th Order
-      %th Data
-      %th Type
-      %th
-      %th
-      %th
-
-    - @article.blocks.each do |block|
-      %tr
-        %td= block.article_id
-        %td= block.order
-        %td= block.data
-        %td= block.block_type
-        %td= link_to 'Show', [@article, block]
-        %td= link_to 'Edit', edit_article_block_path(@article, block)
-        %td= link_to 'Destroy', [@article, block], :confirm => 'Are you sure?', :method => :delete
-
-  %br
-
-
-  = link_to 'Edit', edit_article_path(@article)
-  \|
-  = link_to 'Back', articles_path
+    = link_to 'Edit summary', edit_article_path(@article), :class => :btn
+    = link_to 'Back', articles_path, :class => :btn
+  .span3
+    %h2 Add a block
+    %p
+      = link_to 'Text', new_article_block_path(@article), :class => "btn"
+      = link_to 'Image', new_article_block_path(@article, :type => :image), :class => "btn"
