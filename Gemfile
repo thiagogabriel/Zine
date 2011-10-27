@@ -40,4 +40,4 @@ gem 'haml-rails'
 gem "paperclip", "~> 2.4"
 
 # sudo port install graphviz
-gem "railroady"
+#gem "railroady"

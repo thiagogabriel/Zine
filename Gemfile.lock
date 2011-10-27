@@ -80,7 +80,6 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
-    railroady (1.0.2)
     rails (3.1.0)
       actionmailer (= 3.1.0)
       actionpack (= 3.1.0)
@@ -131,7 +130,6 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   paperclip (~> 2.4)
-  railroady
   rails (= 3.1.0)
   sass-rails (~> 3.1.0)
   sqlite3
