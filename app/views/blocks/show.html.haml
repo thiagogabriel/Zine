@@ -1,7 +1,4 @@
-%p#notice= notice
-
-%h1
-  = @block.article.title
+=breadcrumbs [["Articles", articles_path], ["#{@article.title}", @article]], "Block"
 %p
   %b Data:
   = @block.data
@@ -10,11 +7,10 @@
   = @block.block_type
 
 -if @block.block_type == "image"
-  #images
+  %ul.media-grid
     -for image in @block.images
-      .image
-        =link_to image_tag(image.image, size: "60x60"), edit_article_block_image_path(@block.article_id, @block, image)
-        =link_to "x", article_block_image_path(@block.article_id, @block, image.id), method: :delete#, :class => "btn danger"
+      %li
+        =link_to image_tag(image.image, size: "90x90"), article_block_image_path(@block.article_id, @block, image)
   %p
     =link_to "Add image", new_article_block_image_path(@article, @block), :class => "btn primary large"
 

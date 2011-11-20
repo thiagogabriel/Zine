@@ -47,4 +47,5 @@ class ImagesController < ApplicationController
     @block = Block.find(params[:block_id])
   end
 
+
 end

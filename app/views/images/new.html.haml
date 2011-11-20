@@ -1,5 +1,14 @@
+=breadcrumbs [["Articles", articles_path], ["#{@block.article.title}", @article], ["Image Gallery Block", article_block_path(@block.article.id, @block.id)]], "New image"
+
 = form_for @image, :url => article_block_images_path(@block.article.id, @block.id), :html => {:multipart => true} do |f|
-	=f.file_field :image
-	=f.text_area:description
-	.actions
-		= f.submit 'Save'
+  .field.clearfix
+    =f.label "image", "Image file"
+    .input
+      =f.file_field :image, class: "span11"
+  .field.clearfix
+    =f.label "description"
+    .input
+      =f.text_area :description, rows: 4, class: "span11"
+  .actions
+    = f.submit 'Save', class: "btn primary"
+    = link_to "Cancel", article_block_path(@block.article.id, @block.id), :class => :btn
