@@ -29,9 +29,14 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+
 group :test do
-  # Pretty printed test output
+  gem 'cucumber-rails'
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  
   gem 'turn', :require => false
+  
 end
 
 
@@ -40,4 +45,4 @@ gem 'haml-rails'
 gem "paperclip", "~> 2.4"
 
 # sudo port install graphviz
-gem "railroady"
+#gem "railroady"
