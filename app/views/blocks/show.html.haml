@@ -10,7 +10,7 @@
   %ul.media-grid
     -for image in @block.images
       %li
-        =link_to image_tag(image.image, size: "90x90"), article_block_image_path(@block.article_id, @block, image)
+        =link_to image_tag(image.image(:thumb)), article_block_image_path(@block.article_id, @block, image)
   %p
     =link_to "Add image", new_article_block_image_path(@article, @block), :class => "btn primary large"
 

@@ -2,7 +2,7 @@
   #gal.svwp
     %ul
       -for image in block.images
-        %li=image_tag image.image, size: "940x320", alt: image.description
+        %li=image_tag image.image(:gallery), size: "940x320", alt: image.description
 -else
   .image
-    =image_tag block.images[0].image, size: "940x320", alt: block.images[0].description
+    =image_tag block.images[0].image(:gallery), size: "940x320", alt: block.images[0].description
