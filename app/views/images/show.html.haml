@@ -1,6 +1,7 @@
-%h1 Images#show
-%p Find me in app/views/images/show.html.haml
-=image_tag @image.image.url 
+=breadcrumbs [["Articles", articles_path], ["#{@block.article.title}", @block.article], ["Block", article_block_path(@block.article, @block)]], "Image"
 
+%p= @image.description
+%p=image_tag @image.image.url 
 %p
-  =link_to "Back", [@image.block.article, @image.block]
+  = link_to 'Edit', edit_article_block_image_path(@block.article, @block, @image), :class => "btn"
+  = link_to 'Destroy', article_block_image_path(@block.article, @block, @image), :confirm => 'Are you sure?', :method => :delete, :class => "btn danger"

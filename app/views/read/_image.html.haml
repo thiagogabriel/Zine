@@ -1,2 +1,8 @@
--for image in block.images
-  =image_tag image.image
+-if block.images.count != 1
+  #gal.svwp
+    %ul
+      -for image in block.images
+        %li=image_tag image.image, size: "940x320", alt: image.description
+-else
+  .image
+    =image_tag block.images[0].image, size: "940x320", alt: block.images[0].description

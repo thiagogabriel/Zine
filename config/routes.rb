@@ -3,12 +3,13 @@ Zine::Application.routes.draw do
   
   match "read/:id" => "read#article", as: :read_article
 
-  root :to => "home#index"
   resources :articles do
     resources :blocks do
 	    resources :images
 	  end
   end
+  
+  root :to => "read#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
