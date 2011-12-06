@@ -6,4 +6,28 @@
   -moz-column-count: 2;
   -o-column-count: 2;
   column-count: 2;
+  margin: 15px 0;
+}
+
+.has-pullquote:before {
+  /* Reset metrics. */
+  padding: 0;
+  border: none;
+
+  /* Content */
+  content: attr(data-pullquote);
+
+  /* Pull out to the right, modular scale based margins. */
+  float: right;
+  width: 45%;
+  margin: 1em 0 1em 1.5em;
+
+  /* Baseline correction */
+  position: relative;
+  top: 6px;
+  font-size: 1.4em;
+  line-height: 1.45em;
+  
+  font-family: "HelveticaNeue-Light", Helvetica, Arial,
+               sans-serif;
 }
