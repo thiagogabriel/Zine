@@ -2,6 +2,8 @@
 %html
   %head
     %title Zine
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+    %meta{:content => "black-translucent", :names => "apple-mobile-web-app-status-bar-style"}/
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
