@@ -46,3 +46,6 @@ gem "paperclip", "~> 2.4"
 gem 'formatize' 
 # sudo port install graphviz
 #gem "railroady"
+
+gem "liquid"
+gem "RedCloth"
