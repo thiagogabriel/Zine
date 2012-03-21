@@ -50,3 +50,4 @@ gem 'formatize'
 
 gem "liquid"
 gem "RedCloth"
+gem "rubypants"

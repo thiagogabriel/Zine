@@ -140,6 +140,7 @@ GEM
       thor (~> 0.14.6)
     rake (0.9.2)
     rdoc (3.9.4)
+    rubypants (0.2.0)
     rubyzip (0.9.4)
     sass (3.1.7)
     sass-rails (3.1.0)
@@ -190,6 +191,7 @@ DEPENDENCIES
   liquid
   paperclip (~> 2.4)
   rails (= 3.1.0)
+  rubypants
   sass-rails (~> 3.1.0)
   sqlite3
   turn
