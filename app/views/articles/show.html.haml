@@ -4,6 +4,8 @@
   .span13
     %h1= @article.title
     %p
+      = image_tag @article.image.url(:medium)
+    %p
       %b Summary:
       = @article.summary
   

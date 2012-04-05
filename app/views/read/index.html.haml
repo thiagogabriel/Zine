@@ -1,4 +1,13 @@
 %h1 Read
-%ul
-  -for article in @articles
-    %li= link_to article.title, read_article_path(article.id)
+- i = 1
+-for article in @articles
+  -if i % 3 == 0
+    <div class="row">
+  .span5
+    %p
+      = image_tag article.image.url(:medium)
+    %p
+      = link_to article.title, read_article_path(article.id)
+  -if i % 3 == 0
+    </div>
+  - i += 1 

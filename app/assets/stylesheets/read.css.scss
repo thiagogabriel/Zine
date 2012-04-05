@@ -12,7 +12,7 @@ h1 {
 font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 50px; font-weight: 100; letter-spacing: 1px;
   margin-top:10px;
 }
-.has-pullquote:before {
+.has-pullquote:before, .pullquote-right:before {
   /* Reset metrics. */
   padding: 0;
   border: none;

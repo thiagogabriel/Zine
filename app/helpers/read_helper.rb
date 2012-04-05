@@ -19,7 +19,6 @@ module LiquidFilters
   end
 end
 
-Liquid::Template.register_tag('pullquote', LiquidFilters::PullquoteTag)
 
 module ReadHelper
   def render_content(context)
@@ -33,6 +32,7 @@ module ReadHelper
   end
 
   def render_this(text)
+    Liquid::Template.register_tag('pullquote', LiquidFilters::PullquoteTag)
     RedCloth.new(Liquid::Template.parse(text).render({}, filters: [LiquidFilters])).to_html.html_safe
     #RedCloth.new(Liquid::Template.parse(content).render(arguments, :filters => [LiquidFilters])).to_html
 

@@ -14,6 +14,10 @@
     = f.label :summary
     .input
       = f.text_area :summary, :rows => 8, :class => :span12
+  .field.clearfix
+    =f.label "image", "Image file"
+    .input
+      =f.file_field :image, class: "span11"
   .actions
     = f.submit 'Save', :class => "btn primary"
     = link_to 'Cancel', articles_path, :class => "btn"
