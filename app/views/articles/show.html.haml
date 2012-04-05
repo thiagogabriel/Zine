@@ -1,7 +1,7 @@
 =breadcrumbs [["Articles", articles_path]], "#{@article.title}"
 #article.row
 
-  .span13
+  .span10
     %h1= @article.title
     %p
       = image_tag @article.image.url(:medium)
@@ -10,7 +10,7 @@
       = @article.summary
   
     -if @article.blocks.length > 0
-      %table.zebra-striped
+      %table.table.table-striped.table-bordered
         %tr
           %th Type
           %th Data
@@ -23,11 +23,11 @@
             %td
               = link_to 'Show', [@article, block], :class => :btn
               = link_to 'Edit', edit_article_block_path(@article, block), :class => :btn
-              = link_to 'Destroy', [@article, block], :confirm => 'Are you sure?', :method => :delete, :class => "btn danger"
+              = link_to 'Destroy', [@article, block], :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
 
     = link_to 'Edit summary', edit_article_path(@article), :class => :btn
     = link_to 'Back', articles_path, :class => :btn
-  .span3
+  .span2
     %h2 Add a block
     %p
       = link_to 'Text', new_article_block_path(@article), :class => "btn"

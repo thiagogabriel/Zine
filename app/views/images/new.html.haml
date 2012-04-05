@@ -10,5 +10,5 @@
     .input
       =f.text_area :description, rows: 4, class: "span11"
   .actions
-    = f.submit 'Save', class: "btn primary"
+    = f.submit 'Save', class: "btn btn-primary"
     = link_to "Cancel", article_block_path(@block.article.id, @block.id), :class => :btn
