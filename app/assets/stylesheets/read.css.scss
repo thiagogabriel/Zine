@@ -8,8 +8,20 @@
   column-count: 2;
   margin: 15px 0;
 }
+#read h1.title {
+  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif; 
+  font-size: 100px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  margin-top:0px;
+  margin-bottom:10px;
+  line-height: 90px;
+}
 h1 {
-font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 50px; font-weight: 100; letter-spacing: 1px;
+  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif; 
+  font-size: 50px;
+  font-weight: 100;
+  letter-spacing: 1px;
   margin-top:10px;
 }
 .has-pullquote:before, .pullquote-right:before {

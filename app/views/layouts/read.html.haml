@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Zine
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+    %meta{:content => "black-translucent", :names => "apple-mobile-web-app-status-bar-style"}/
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #read.container
+      -if flash[:notice]
+        .alert-message.info=flash[:notice]
+      -if flash[:error]
+        .alert-message.error=flash[:error]
+      -if flash[:warning]
+        .alert-message.warning=flash[:warning]
+      = yield
+      .footer
+        %p
+          =link_to "Admin", articles_path

@@ -1,3 +1,4 @@
+%h1.title Magazine 
 #menulist.row
   -3.times do |col|
     .span4
@@ -6,8 +7,8 @@
         -if i % 3 == 0
           .article
             %h2
-              %a= link_to article.title, article
-            = image_tag article.image.url(:medium)
+              %a= link_to article.title, read_article_path(article.id)
+            = link_to image_tag(article.image.url(:medium)), read_article_path(article.id)
             %p= article.summary
         - i += 1
 
