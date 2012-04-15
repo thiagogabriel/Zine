@@ -8,4 +8,12 @@ module ApplicationHelper
     links_string += "<li class=\"active\">#{here}</li></ul>"
     links_string.html_safe
   end
+  
+  def icon(icon_name)
+    "<i class=\"icon-#{icon_name}\"></i>".html_safe
+  end
+  
+  def iconw(icon_name)
+    "<i class=\"icon-#{icon_name} icon-white\"></i>".html_safe
+  end
 end

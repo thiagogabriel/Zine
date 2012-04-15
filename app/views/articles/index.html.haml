@@ -13,9 +13,9 @@
             %td= article.title
             %td= article.summary
             %td
-              = link_to 'Edit', article, :class => "btn"
+              = link_to "#{icon('edit')} Edit".html_safe, article, :class => "btn"
               = link_to 'Edit summary', edit_article_path(article), :class => "btn"
               = link_to '<i class="icon-trash icon-white"></i>'.html_safe, article, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
   .span2
-    = link_to 'New Article', new_article_path, :class => "btn btn-primary btn-large"
+    = link_to "#{iconw('plus')} New Article".html_safe, new_article_path, :class => "btn btn-primary btn-large"
   
