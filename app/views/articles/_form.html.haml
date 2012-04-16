@@ -15,6 +15,15 @@
     .input
       = f.text_area :summary, :rows => 8, :class => :span12
   .field.clearfix
+    = f.label :author
+    .input
+      = f.text_field :author, :class => :span12
+  .field.clearfix
+    = f.label :publish_at
+    .input
+      = f.date_select :publish_at, :class => :span12
+  
+  .field.clearfix
     =f.label "image", "Image file"
     .input
       =f.file_field :image, class: "span11"

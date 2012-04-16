@@ -8,14 +8,26 @@
   column-count: 2;
   margin: 15px 0;
 }
-#read h1.title {
-  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif; 
-  font-size: 100px;
-  font-weight: 100;
-  letter-spacing: 1px;
+.article {
+  border-bottom: 1px dashed #999;
+  
+  img {
+    margin-bottom: 6px;
+  }
+  
+  img:hover {
+    border: 3px solid #FE57A1;
+    margin: -3px -3px 3px -3px;
+  }
+}
+#read .title {
   margin-top:0px;
   margin-bottom:10px;
   line-height: 90px;
+  h3 {
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+  }
 }
 h1 {
   font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif; 
