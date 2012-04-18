@@ -24,7 +24,7 @@
         %tr
           %th Type
           %th Data
-          %th{:width => "180px"}
+          %th{:width => "120px"}
 
         - @article.blocks.each do |block|
           %tr
@@ -39,7 +39,7 @@
             - else
               %td
             %td
-              = link_to 'Show', [@article, block], :class => :btn
+              /= link_to "#{icon('eye-open')} Show".html_safe, [@article, block], :class => :btn
               = link_to "#{icon('edit')} Edit".html_safe, edit_article_block_path(@article, block), :class => :btn
               = link_to '<i class="icon-trash icon-white"></i>'.html_safe, [@article, block], :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
   .span2
