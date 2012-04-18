@@ -5,16 +5,19 @@
       %table.table.table-striped.table-bordered
         %tr
           %th Title
-          %th Summary
-          %th{:width => "250px"}
+          %th Date
+          %th{:width => "120px"}
 
         - @articles.each do |article|
           %tr
             %td= article.title
-            %td= article.summary
+            -if article.publish_at
+              %td= l article.publish_at, :format => :long
+            -else
+              %td
             %td
               = link_to "#{icon('edit')} Edit".html_safe, article, :class => "btn"
-              = link_to 'Edit summary', edit_article_path(article), :class => "btn"
+              /= link_to 'Edit summary', edit_article_path(article), :class => "btn"
               = link_to '<i class="icon-trash icon-white"></i>'.html_safe, article, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
   .span2
     = link_to "#{iconw('plus')} New Article".html_safe, new_article_path, :class => "btn btn-primary btn-large"

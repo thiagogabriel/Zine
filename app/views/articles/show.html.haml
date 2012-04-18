@@ -1,32 +1,47 @@
 =breadcrumbs [["Articles", articles_path]], "#{@article.title}"
 #article.row
-
-  .span10
+  .span4
     %h1= @article.title
     %p
       = image_tag @article.image.url(:medium)
     %p
       %b Summary:
       = @article.summary
-  
+    %p
+      %b Author:
+      = @article.author
+    %p
+      %b Publish date:
+      -if @article.publish_at
+        = l @article.publish_at, :format => :long
+    %p
+      = link_to 'Edit metadata', edit_article_path(@article), :class => :btn
+      = link_to 'Back', articles_path, :class => :btn
+  .span6
+    %h2 Blocks
     -if @article.blocks.length > 0
       %table.table.table-striped.table-bordered
         %tr
           %th Type
           %th Data
-          %th{:width => "200px"}
+          %th{:width => "180px"}
 
         - @article.blocks.each do |block|
           %tr
             %td= block.block_type.capitalize
-            %td= block.data
+            -if block.block_type == "text"
+              %td #{block.data[0..100]}…
+            - elsif block.block_type == "image"
+              %td
+                %ul
+                  -for image in block.images
+                    %li=image_tag image.image(:thumb), alt: image.description
+            - else
+              %td
             %td
               = link_to 'Show', [@article, block], :class => :btn
               = link_to "#{icon('edit')} Edit".html_safe, edit_article_block_path(@article, block), :class => :btn
               = link_to '<i class="icon-trash icon-white"></i>'.html_safe, [@article, block], :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger"
-
-    = link_to 'Edit summary', edit_article_path(@article), :class => :btn
-    = link_to 'Back', articles_path, :class => :btn
   .span2
     %h2 Add a block
     %p
