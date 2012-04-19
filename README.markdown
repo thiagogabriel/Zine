@@ -1,4 +1,3 @@
-Zine
-####
+# Zine
 
 Simple HTML Magazine.
