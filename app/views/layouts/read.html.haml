@@ -9,6 +9,15 @@
     = csrf_meta_tags
   %body
     #read.container
+      -if @next
+        .navbar.navbar-fixed-bottom
+          .navbar-inner
+            .container
+              =link_to "Magazine", root_path, :class => :brand
+              %ul.nav.pull-right
+                %li= link_to "#{@next.title} ►", read_article_path(@next.id)
+            
+        
       -if flash[:notice]
         .alert-message.info=flash[:notice]
       -if flash[:error]

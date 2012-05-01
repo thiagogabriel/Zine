@@ -24,13 +24,16 @@
   font-size: 100px;
   line-height: 100px;
 }
-#read .title {
-  margin-top:0px;
-  margin-bottom:10px;
-  line-height: 90px;
-  h3 {
-    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    font-weight: normal;
+#read {
+  margin-bottom: 40px;
+  .title {
+    margin-top:0px;
+    margin-bottom:10px;
+    line-height: 90px;
+    h3 {
+      font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      font-weight: normal;
+    }
   }
 }
 h1 {
@@ -58,7 +61,7 @@ h1 {
   top: 6px;
   font-size: 1.4em;
   line-height: 1.45em;
-  
+  color: #FE57A1;
   font-family: "HelveticaNeue-Light", Helvetica, Arial,
                sans-serif;
 }
