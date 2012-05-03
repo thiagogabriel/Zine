@@ -1,3 +1,7 @@
+/*
+  Default gallery CSS
+*/
+
 .svwp {width: 50px; height: 20px; background: #fff;} /*preloader stuff. do not modify!*/
 .svwp ul{position: relative; left: -999em;}/*preloader stuff. do not modify!*/
 .slideViewer { 

@@ -1,16 +1,17 @@
-%h1.cover-title Magazine 
-#menulist.row
-  -3.times do |col|
-    .span4
-      - i = col
-      -for article in @articles
-        -if i % 3 == 0
-          .article
-            %h2
-              %a= link_to article.title, read_article_path(article.id)
-            = link_to image_tag(article.image.url(:medium)), read_article_path(article.id)
-            %p= article.summary
-        - i += 1
+#cover
+  %h1.cover-title Magazine
+  #menulist.row
+    -3.times do |col|
+      .span4
+        - i = col
+        -for article in @articles
+          -if i % 3 == 0
+            .article-item
+              %h2
+                %a= link_to article.title, read_article_path(article.id)
+              = link_to image_tag(article.image.url(:medium)), read_article_path(article.id)
+              %p= article.summary
+          - i += 1
 
 / - i = 0
 / -for article in @articles

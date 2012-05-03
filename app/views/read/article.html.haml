@@ -1,10 +1,11 @@
-.row
-  .span12.title
-    %h1= @article.title
-    %h3 By #{@article.author} #{time_ago_in_words(@article.publish_at)} ago
-.row
-  .span12
-    = image_tag @article.image.url(:gallery)
-#article
-  -for block in @blocks
-    =render :partial => block.block_type.downcase, :locals => { :block => block }
+#read-article
+  .row
+    .span12.title
+      %h1= @article.title
+      %h3 By #{@article.author} #{time_ago_in_words(@article.publish_at)} ago
+  .row
+    .span12
+      = image_tag @article.image.url(:gallery)
+  %div
+    -for block in @blocks
+      =render :partial => block.block_type.downcase, :locals => { :block => block }

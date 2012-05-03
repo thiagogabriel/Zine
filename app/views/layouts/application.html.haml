@@ -6,6 +6,9 @@
     %meta{:content => "black-translucent", :names => "apple-mobile-web-app-status-bar-style"}/
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
+    %script{:src => "http://use.typekit.com/oar5tuy.js", :type => "text/javascript"}
+    :javascript
+      try{Typekit.load();}catch(e){}
     = csrf_meta_tags
   %body
     .container
