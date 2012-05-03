@@ -6,6 +6,6 @@
   .row
     .span12
       = image_tag @article.image.url(:gallery)
-  %div
-    -for block in @blocks
+  -for block in @blocks
+    .row
       =render :partial => block.block_type.downcase, :locals => { :block => block }

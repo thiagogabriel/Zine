@@ -1,7 +1,7 @@
 // Place all the styles related to the Read controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+img { max-width: 100%; }
 #read {
   margin-bottom: 40px;
   
@@ -30,6 +30,15 @@
       -o-column-count: 2;
       column-count: 2;
       margin: 15px 0;
+    }
+    @media (max-width: 480px) {
+      .text {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        -o-column-count: 1;
+        column-count: 1;
+        margin: 15px 0;
+      }
     }
     .title {
       margin-top:0px;
