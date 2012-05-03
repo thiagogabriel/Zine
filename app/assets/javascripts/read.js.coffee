@@ -17,3 +17,6 @@
     scales = [ .25, 1.6 ]
     doc[addEvent] type, fix, true
 ) document
+
+$ ->
+  $("#asdf").carousel()
