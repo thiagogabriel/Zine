@@ -1,11 +1,11 @@
 #cover
   %h1.cover-title Magazine
   #menulist.row
-    -3.times do |col|
-      .span4
+    -4.times do |col|
+      .span3
         - i = col
         -for article in @articles
-          -if i % 3 == 0
+          -if i % 4 == 0
             .article-item
               %h2
                 %a= link_to article.title, read_article_path(article.id)
