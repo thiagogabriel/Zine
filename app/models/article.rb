@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => [ /^image\/(?:jpeg|gif|png)$/, nil ]
   
   has_attached_file :image,
-    :styles => {:full => "1170x320#", :gallery => "1170x320#", :medium => "600x450>", :thumb => "100x100>" },
+    :styles => {:full => "1170x320>", :gallery => "1170x320#", :medium => "600x450>", :thumb => "100x100>" },
     :storage => :s3,
     :bucket => "marcopompei-zine",
     :s3_credentials => {
