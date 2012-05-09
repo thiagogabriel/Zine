@@ -5,6 +5,9 @@
     %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
     %meta{:content => "black-translucent", :names => "apple-mobile-web-app-status-bar-style"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    -if @next
+      <link rel="prefetch" href="#{read_article_path(@next.id)}">
+      <link rel="prerender" href="#{read_article_path(@next.id)}">
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     %script{:src => "http://use.typekit.com/oar5tuy.js", :type => "text/javascript"}
