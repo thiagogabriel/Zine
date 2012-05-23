@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @article
   end
 
   def create
