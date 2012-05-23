@@ -1,0 +1,15 @@
+= form_for [@article, @block] do |f|
+  -if @block.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@block.errors.count, "error")} prohibited this block from being saved:"
+      %ul
+        - @block.errors.full_messages.each do |msg|
+          %li= msg
+  .field.clearfix
+    = f.label :data, 'Video URL'
+    .input
+      = f.text_field :data, :class => :span12, :rows => 15
+  .actions
+    = hidden_field_tag "block[block_type]", "video"
+    = f.submit 'Save', :class => "btn btn-primary"
+    = link_to 'Back', article_path(@article), :class => :btn

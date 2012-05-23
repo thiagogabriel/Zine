@@ -39,4 +39,22 @@ module ReadHelper
     #RedCloth.new(Liquid::Template.parse(content).render(arguments, :filters => [LiquidFilters])).to_html
 
   end
+  
+  def youtube_embed(url)
+    begin
+      url_params = url.gsub("http://www.youtube.com/watch?", "")
+      result = {}.with_indifferent_access
+      url_params.split('&').each do |element|
+        element = element.split('=')
+        result[element[0]] = element[1]
+      end
+      %{
+        <iframe id="ytplayer" type="text/html" width="100%" height="390"
+          src="http://www.youtube.com/embed/#{result["v"]}?theme=light&showinfo=0&rel=0"
+          frameborder="0"></iframe>
+      }.html_safe
+    rescue Exception => e
+      e
+    end
+  end
 end

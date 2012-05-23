@@ -1,5 +1,7 @@
 =breadcrumbs [["Articles", articles_path], ["#{@article.title}", @article]], "New block"
 -if @type == "image"
   = render 'image_form'
+-if @type == "video"
+  = render 'video_form'
 -else
   = render 'form'
