@@ -11,19 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416230517) do
+ActiveRecord::Schema.define(:version => 20120530225102) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "summary"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "author"
     t.datetime "publish_at"
+    t.boolean  "visible"
   end
 
   create_table "blocks", :force => true do |t|
@@ -31,8 +32,8 @@ ActiveRecord::Schema.define(:version => 20120416230517) do
     t.integer  "order"
     t.text     "data"
     t.string   "block_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "images", :force => true do |t|
@@ -42,8 +43,15 @@ ActiveRecord::Schema.define(:version => 20120416230517) do
     t.datetime "image_updated_at"
     t.integer  "block_id"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "login"
+    t.string   "encoded_password"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end

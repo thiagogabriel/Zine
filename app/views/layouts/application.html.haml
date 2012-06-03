@@ -21,11 +21,19 @@
             %ul.nav
               %li= link_to "Read", read_path
               %li= link_to "Articles", articles_path
+              %li= link_to "Users", users_path
+            -if @user
+              %ul.nav.pull-right
+                %li= link_to @user.login, @user
+                %li= link_to "logout", logout_path
+            -else
+              %ul.nav.pull-right
+                %li= link_to "login", login_path
       #content
         -if flash[:notice]
-          .alert-message.info=flash[:notice]
+          .alert.alert-info=flash[:notice]
         -if flash[:error]
-          .alert-message.error=flash[:error]
+          .alert.alert-error=flash[:error]
         -if flash[:warning]
-          .alert-message.warning=flash[:warning]
+          .alert.alert-warning=flash[:warning]
         = yield

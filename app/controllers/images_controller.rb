@@ -1,5 +1,7 @@
 class ImagesController < ApplicationController
   before_filter :load_block
+  before_filter :require_login
+  
 
   def index
 	@images = @block.images

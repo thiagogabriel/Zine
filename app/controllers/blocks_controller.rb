@@ -1,4 +1,5 @@
 class BlocksController < ApplicationController
+  before_filter :require_login
   before_filter :get_article
   before_filter :set_params, :only => [:create, :update]
   

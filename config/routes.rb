@@ -1,9 +1,23 @@
 Zine::Application.routes.draw do
+
+  match "login" => "Authentication#new", as: :login
+  match "do_login" => "Authentication#create", as: :do_login
+  
+  match "logout" => "Authentication#destroy", as: :logout
+
+  #resource :authentication, :controller => , :only => [:new, :create, :destroy]
+
+  resources :users
+
   match "read" => "read#index", as: :read
   
   match "read/:id" => "read#article", as: :read_article
 
   resources :articles do
+    member do
+      post 'toggle_visibility'
+    end
+    
     resources :blocks do
 	    resources :images
 	  end

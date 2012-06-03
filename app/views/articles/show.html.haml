@@ -15,6 +15,11 @@
       -if @article.publish_at
         = l @article.publish_at, :format => :long
     %p
+      -if @article.visible
+        = link_to 'Hide article', toggle_visibility_article_path(@article), :class => "btn btn-inverse btn-large", :method => :post
+      -else
+        = link_to 'Publish', toggle_visibility_article_path(@article), :class => "btn btn-success btn-large", :confirm => 'Are you sure?', :method => :post
+    %p
       = link_to 'Edit metadata', edit_article_path(@article), :class => :btn
       = link_to 'Back', articles_path, :class => :btn
   .span6

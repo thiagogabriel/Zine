@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_filter :require_login
+  
   def index
     @articles = Article.all
   end
@@ -15,6 +17,13 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
     @article
+  end
+  
+  def toggle_visibility
+    @article = Article.find(params[:id])
+    @article.visible = !@article.visible
+    @article.save
+    redirect_to @article
   end
 
   def create
